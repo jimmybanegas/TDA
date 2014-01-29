@@ -16,7 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    empleado.cpp
+    empleado.cpp \
+    arreglo.cpp
 
 HEADERS += \
-    empleado.h
+    empleado.h \
+    arreglo.h
