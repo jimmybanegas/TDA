@@ -4,7 +4,6 @@
 #include "Lista.h"
 #include "Empleado.h"
 #include <iostream>
-#include <QString>
 
 using namespace std;
 
@@ -15,15 +14,15 @@ int main()
     int op;
 
    do{
-      cout<< "\nIngrese la opcion : "<<endl;
-      cout<< "1. Insertar nuevo empleado  "<<endl;
-      cout<< "2. Inicio  "<<endl;
-      cout<< "3. Final  "<<endl;
-      cout<< "4. Siguiente  "<<endl;
-      cout<< "5. Recuperar  "<<endl;
-      cout<< "6. Eliminar "<<endl;
-      cout<< "7. Mover  "<<endl;
-      cout<< "8. Imprimir empleados  "<<endl;
+      cout << "\nIngrese la opcion : "<<endl;
+      cout << "1. Insertar nuevo empleado  "<<endl;
+      cout << "2. Inicio  "<<endl;
+      cout << "3. Final  "<<endl;
+      cout << "4. Siguiente  "<<endl;
+      cout << "5. Recuperar  "<<endl;
+      cout << "6. Eliminar "<<endl;
+      cout << "7. Mover  "<<endl;
+      cout << "8. Imprimir empleados  "<<endl;
 
       cin>>op;
 
@@ -34,20 +33,19 @@ int main()
           int id;
           string nombre;
           int pos;
-          cout<< "\nIngrese la posicion donde insertar  ";
+          cout << "\nIngrese la posicion donde insertar  ";
           cin>>pos;
-          cout<< "\nIngrese el codigo de empleado  ";
+          cout << "\nIngrese el codigo de empleado  ";
           cin>>id;
-          cout<< "Ingrese el nombre  ";
-
+          cout << "Ingrese el nombre  ";
           cin>>nombre;
 
           Nodo *a = new Nodo(id,nombre) ;
 
           if(lista.insertar(pos,a))
-              cout<< "\nInsertado exitosamente  "<<endl;
+              cout << "\nInsertado exitosamente  "<<endl;
           else
-              cout<< "\nNo se pudo insertar  "<<endl;
+              cout << "\nNo se pudo insertar  "<<endl;
          }
           break;
         case 2:
@@ -81,7 +79,7 @@ int main()
       case 4:
        {
           int pos;
-          cout<< "\nIngrese la posicion para conocer su siguiente ";
+          cout << "\nIngrese la posicion para conocer su siguiente ";
           cin>>pos;
           Nodo* c=lista.siguiente(pos);
 
