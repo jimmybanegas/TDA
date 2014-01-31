@@ -1,9 +1,9 @@
-#include "arreglo.h"
-#include "empleado.h"
+#include "Arreglo.h"
 
 Arreglo::Arreglo()
 {
-    this->cont=cant;
+    this->cont=0;
+    //ctor
 }
 
 bool Arreglo::insertar(int pos, Empleado *emp)
@@ -94,4 +94,10 @@ void Arreglo::imprimir()
         for(int i=0;i<cont;i++)
             cout<<"-----"<<empleados[i]->id<<" "<<empleados[i]->nombre<<endl;
     }
+}
+
+
+Arreglo::~Arreglo()
+{
+    //dtor
 }

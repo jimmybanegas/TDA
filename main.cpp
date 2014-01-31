@@ -1,61 +1,64 @@
-#include <QCoreApplication>
-#include "empleado.h"
-#include "arreglo.h"
 #include <iostream>
+#include "Arreglo.h"
+#include "Nodo.h"
+#include "Lista.h"
+#include "Empleado.h"
+#include <iostream>
+#include <QString>
 
 using namespace std;
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
-
-     Arreglo arr;
-   // Empleado *dos=new Empleado();
-
+    Arreglo arr;
+    Lista lista;
     int op;
 
-    arr.imprimir();
-  // do{
-      cout << "\nIngrese la opcion : "<<endl;
-      cout << "1. Insertar nuevo empleado  "<<endl;
-      cout << "2. Inicio  "<<endl;
-      cout << "3. Final  "<<endl;
-      cout << "4. Siguiente  "<<endl;
-      cout << "5. Recuperar  "<<endl;
-      cout << "6. Eliminar "<<endl;
-      cout << "7. Imprimir empleados  "<<endl;
+   do{
+      cout<< "\nIngrese la opcion : "<<endl;
+      cout<< "1. Insertar nuevo empleado  "<<endl;
+      cout<< "2. Inicio  "<<endl;
+      cout<< "3. Final  "<<endl;
+      cout<< "4. Siguiente  "<<endl;
+      cout<< "5. Recuperar  "<<endl;
+      cout<< "6. Eliminar "<<endl;
+      cout<< "7. Mover  "<<endl;
+      cout<< "8. Imprimir empleados  "<<endl;
 
       cin>>op;
 
-      /*switch(op)
+      switch(op)
       {
         case 1:
          {
           int id;
           string nombre;
           int pos;
-          cout << "\nIngrese la posicion donde insertar  ";
+          cout<< "\nIngrese la posicion donde insertar  ";
           cin>>pos;
-          cout << "\nIngrese el codigo de empleado  ";
+          cout<< "\nIngrese el codigo de empleado  ";
           cin>>id;
-          cout << "Ingrese el nombre  ";
+          cout<< "Ingrese el nombre  ";
+
           cin>>nombre;
 
-          if(arr->insertar(pos,new Empleado(id,nombre)))
-              cout << "\nInsertado exitosamente  "<<endl;
+          Nodo *a = new Nodo(id,nombre) ;
+
+          if(lista.insertar(pos,a))
+              cout<< "\nInsertado exitosamente  "<<endl;
           else
-              cout << "\nNo se pudo insertar  "<<endl;
+              cout<< "\nNo se pudo insertar  "<<endl;
          }
           break;
         case 2:
          {
-          Empleado* b = arr->inicio();
+          Nodo* b = lista.ini();
 
           if(b!=NULL)
           {
               cout<<"\nEl inicio es: ";
-              cout<<"-----"<<b->id<<" ";
-              cout<<b->nombre<<endl;
+              cout<<"-----"<<b->emp->id<<" ";
+              cout<<b->emp->nombre<<endl;
           }
           else
               cout<<"\nArreglo vacio"<<endl;
@@ -63,13 +66,13 @@ int main(int argc, char *argv[])
           break;
          case 3:
           {
-          Empleado* c=arr->fin();
+          Nodo* c=lista.fin();
 
           if(c!=NULL)
           {
               cout<<"\nEl fin es: ";
-              cout<<"-----"<<c->id<<" ";
-              cout<<c->nombre<<endl;
+              cout<<"-----"<<c->emp->id<<" ";
+              cout<<c->emp->nombre<<endl;
           }
           else
             cout<<"\nArreglo vacio"<<endl;
@@ -78,15 +81,15 @@ int main(int argc, char *argv[])
       case 4:
        {
           int pos;
-          cout << "\nIngrese la posicion para conocer su siguiente ";
+          cout<< "\nIngrese la posicion para conocer su siguiente ";
           cin>>pos;
-          Empleado* c=arr->siguiente(pos);
+          Nodo* c=lista.siguiente(pos);
 
        if(c!=NULL)
        {
            cout<<"\nEl siguiente de la posicion "<<pos<<" es: ";
-           cout<<"-----"<<c->id<<" ";
-           cout<<c->nombre<<endl;
+           cout<<"-----"<<c->emp->id<<" ";
+           cout<<c->emp->nombre<<endl;
        }
        else
          cout<<"\nEsta posicion no tiene siguiente"<<endl;
@@ -98,11 +101,11 @@ int main(int argc, char *argv[])
           int p1;
           cout<<"\nIngrese la posicion a buscar: ";
           cin>>p1;
-          Empleado * d= arr->recuperar(p1);
+          Nodo * d= lista.recuperar(p1);
           if(d!=NULL)
           {
-              cout<<"-----"<<d->id<<" ";
-              cout<<d->nombre<<endl;
+              cout<<"-----"<<d->emp->id<<" ";
+              cout<<d->emp->nombre<<endl;
           }
           else
               cout<<"No se encuentra, revise parametros"<<endl;
@@ -114,7 +117,7 @@ int main(int argc, char *argv[])
           int p;
           cout<<"\nIngrese la posicion a eliminar: ";
           cin>>p;
-          if(arr->eliminar(p))
+          if(lista.eliminar(p))
              cout<<"\nEliminado exitosamente"<<endl;
           else
              cout<<"\nNo se pudo eliminar, revise los parametros "<<endl;
@@ -123,15 +126,23 @@ int main(int argc, char *argv[])
           break;
         case 7:
           {
+              int from,to;
+              cout<<"\nIngrese la posicion de procedencia: ";
+              cin>>from;
+              cout<<"\nIngrese la posicion de destino: ";
+              cin>>to;
+              lista.mover(from,to);
+          }
+          break;
+        case 8:
+          {
               cout<<"\nListando empleados "<<endl;
-              arr->imprimir();
+              lista.imprimir();
           }
           break;
       }
 
-    }while ( op >= 1 && op<=7 );*/
+    }while ( op >= 1 && op<=8 );
 
-
-    return a.exec();
+    return 0;
 }
-

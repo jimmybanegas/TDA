@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1391029404 source:c:\users\auditor3\documents\progra3\tda\arreglo.cpp
+	"Arreglo.h"
+
+1391043836 c:\users\auditor3\documents\progra3\tda\arreglo.h
+	<iostream>
+	"Empleado.h"
+
+1391029468 c:\users\auditor3\documents\progra3\tda\empleado.h
+	<iostream>
+
+1391043980 source:c:\users\auditor3\documents\progra3\tda\empleado.cpp
+	"Empleado.h"
+	"Nodo.h"
+	"Lista.h"
+
+1391044935 source:c:\users\auditor3\documents\progra3\tda\main.cpp
+	<iostream>
+	"Arreglo.h"
+	"Nodo.h"
+	"Lista.h"
+	"Empleado.h"
+	<iostream>
+
+1391045457 source:c:\users\auditor3\documents\progra3\tda\lista.cpp
+	"Lista.h"
+	"Nodo.h"
+	"Empleado.h"
+
+1391043918 c:\users\auditor3\documents\progra3\tda\lista.h
+	"Nodo.h"
+	<iostream>
+
+1391044630 c:\users\auditor3\documents\progra3\tda\nodo.h
+	<iostream>
+	"Empleado.h"
+
+1391044630 source:c:\users\auditor3\documents\progra3\tda\nodo.cpp
+	"Nodo.h"
+	"Lista.h"
+	"Empleado.h"
+
